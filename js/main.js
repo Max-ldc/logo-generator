@@ -78,3 +78,23 @@ function changeTitle(){
 
     iconTitle.innerHTML=`${iconTitleEntry}`;
 }
+
+// RANDOM FUNCTIONS
+
+function changeRandomColorBG(){
+    let r = Math.round(Math.random()*colors.length);
+    changePreviBGColor(r);
+    console.log(r);
+}
+
+function changeRandomColorTxt(){
+    let r = Math.round(Math.random()*colors.length);
+    changePreviTxtColor(r);
+    console.log(r);
+}
+
+function changeRandomIcon(){
+    let r = Math.round(Math.random()*icons.length);
+    changePreviIcon(r);
+    console.log(r);
+}

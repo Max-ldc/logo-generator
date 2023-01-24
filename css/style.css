@@ -16,7 +16,6 @@ span , label{
     font-weight: bold;
 }
 
-
 .menu{
     display: flex;
     flex-direction: column;
@@ -26,7 +25,6 @@ span , label{
     width: 50%;
     border-right: 1px solid black;
 }
-
 
 .option{
     display: flex;
@@ -53,6 +51,12 @@ div.color{
     display: flex;
     font-size: 2rem;
     flex-wrap: wrap;
+}
+
+.randomColor , .randomIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* RIGHT BOX */

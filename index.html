@@ -15,23 +15,30 @@
         <div class="menu">
             <div class="option">
                 <span>Icone</span>
-                <div class="iconList"></div>
+                <div class="iconList">
+                    <div class="color randomIcon" onclick="changeRandomIcon()"><i class="bi bi-question-circle fs-3"></i></div>
+                </div>
             </div>
             <div class="option">
                 <span>Couleur de fond</span>
                 <div class="colorList listBG">
-
+                    <div class="color randomColor" onclick="changeRandomColorBG()"><i class="bi bi-question-circle fs-3"></i></div>
                 </div>
             </div>
             <div class="option">
                 <span>Couleur d'icone & texte</span>
                 <div class="colorList listTxt">
-
+                    <div class="color randomColor" onclick="changeRandomColorTxt()"><i class="bi bi-question-circle fs-3"></i></div>
                 </div>
             </div>
             <div class="option">
                 <label for="textUnderIcon">Texte</label>
                 <input type="text" name="textUnderIcon" id="textUnderIcon" placeholder="Mon Icone" onkeyup="changeTitle()">
+            </div>
+
+            <div class="option">
+                <span>Tout random</span>
+                <button onclick="changeRandomColorBG();changeRandomColorTxt();changeRandomIcon()">Générer</button>
             </div>
         </div>
 
