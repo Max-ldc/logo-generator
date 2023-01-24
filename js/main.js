@@ -3,7 +3,7 @@
 let colorList1 = document.querySelector(".listBG");
 let colorList2 = document.querySelector(".listTxt");
 
-let colors = ["#B497D6","#22333B","#A9927D","#5E503F","#A5243D","#75704E","#F17F29","#FFFFFF","#000000","#DCED31","#F44E3F","#30321C","#61E8E1","#ADE25D"];
+let colors = ["#B497D6","#22333B","#A9927D","#5E503F","#A5243D","#75704E","#F17F29","#DCED31","#F44E3F","#30321C","#61E8E1","#ADE25D","bisque","#FFFFFF","#000000"];
 
 colors.forEach(         // Obligé de doubler chaque ligne pour mettre en même temps dans couleur de fond & couleur d'icone + texte. Pas réussi sans ça
     (color,i) => {
@@ -84,17 +84,62 @@ function changeTitle(){
 function changeRandomColorBG(){
     let r = Math.round(Math.random()*colors.length);
     changePreviBGColor(r);
-    console.log(r);
 }
 
 function changeRandomColorTxt(){
     let r = Math.round(Math.random()*colors.length);
     changePreviTxtColor(r);
-    console.log(r);
 }
 
 function changeRandomIcon(){
     let r = Math.round(Math.random()*icons.length);
     changePreviIcon(r);
-    console.log(r);
+}
+
+// OBJECTS PRESETS
+
+class Preset{
+    constructor(icon_, bgColor_, color_, text_){
+    this.icon=icon_;
+    this.bgColor=bgColor_;
+    this.itColor=color_;
+    this.text=text_;
+    }
+}
+
+let Vague = new Preset(9,1,10,"New Wave");
+let Bisque = new Preset(0,12,9,"Bisque c'est beau");
+let Radioactive = new Preset(11,7,8,"Radioactive");
+let Cadeau = new Preset(13,1,6,"Cadeau :)");
+let Tornado = new Preset(8,2,4,"Tornado");
+let Winter = new Preset(6,10,8,"Winter is coming");
+
+let presets = [Vague, Bisque, Radioactive, Cadeau, Tornado, Winter];
+
+presets.forEach(
+    (preset,i) => {
+        let presetBox = document.createElement("div");
+        presetBox.className = "color randomIcon";
+        presetBox.style.backgroundColor = colors[preset.bgColor];
+        presetBox.style.color = colors[preset.itColor];
+        presetBox.innerHTML+=            
+            `
+            <i class="${icons[preset.icon]} fs-3"></i>
+            `
+        presetBox.onclick = (e) => {
+            changePreviBGColor(preset.bgColor);
+            changePreviIcon(preset.icon);
+            changePreviTxtColor(preset.itColor);
+            changeTitlePreset(preset.text);
+        };
+
+        document.querySelector(".presetList").appendChild(presetBox);
+
+        
+    }
+)
+
+function changeTitlePreset(texte){
+    document.querySelector(".textIcon").innerHTML=`${texte}`;
+    document.querySelector("#textUnderIcon").value= texte;
 }
