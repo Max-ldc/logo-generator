@@ -1,0 +1,82 @@
+img{
+    max-width: 100%;
+}
+
+.generator{
+    width: 50%;
+    margin: 10vh auto;
+    border: solid 1px black;
+    display: flex;
+}
+
+/* LEFT BOX */
+
+span , label{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    width: 50%;
+    border-right: 1px solid black;
+}
+
+
+.option{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+}
+
+.color{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+}
+div.color{
+    border: solid black 0.3px;
+}
+
+.colorList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.iconList{
+    display: flex;
+    font-size: 2rem;
+    flex-wrap: wrap;
+}
+
+/* RIGHT BOX */
+
+.rightBox{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 7vh;
+    text-align: center;
+}
+
+h2{
+    margin: 0!important;
+    margin-top: 2vh!important;
+}
+
+.preview i{
+    font-size: 6rem;
+}
